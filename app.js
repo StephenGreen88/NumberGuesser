@@ -10,8 +10,13 @@ GAME FUNCTION:
 // Game values
 let min = 1,
     max = 10,
+    // Randomly generated number between 1 and 10
     winningNum = getRandomNum(min, max),
-    guessesLeft = 3;
+    // Number of guesses left
+    guessesLeft = 5,
+    // This is the counter for wins/losses
+    wins = 0,
+    losses = 0;
 
 // UI Elements
 const game = document.querySelector('#game'),
@@ -78,6 +83,10 @@ function gameOver(won, msg) {
 
     // Disable Input
     guessInput.disabled = true;
+
+    // If there is then we win and we'll update the HTML to display the win.
+    // wins++;
+    // document.querySelector("#numWins").innerHTML = wins;
 
     // Change color of border
     guessInput.style.borderColor = color;
